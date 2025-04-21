@@ -42,7 +42,7 @@ This project is a setup starter template for libraries associated with the VCPKG
 
 7. **Run the executable**:
    ```bash
-   build/Debug/myraylib.exe
+   .\build\Debug\myraylib.exe
    ```
 
 8. **You are good to go!**
