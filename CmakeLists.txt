@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.30.4)
+
+set(CMAKE_TOOLCHAIN_FILE "your/path/to/vcpkg/scripts/buildsystems/vcpkg.cmake")
+
+project(myraylib VERSION 0.1.0 LANGUAGES C CXX)
+
+find_package(raylib CONFIG REQUIRED)
+add_executable(myraylib main.cpp)
+
+target_link_libraries(myraylib PRIVATE raylib)
