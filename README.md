@@ -20,32 +20,37 @@ This project is a setup starter template for libraries associated with the VCPKG
    cd My-RayLib-VCPKG-starter-template
    ```
 
-3. **Edit the `CMakeLists.txt` file**:
+3. **Create a build directory: Before proceeding, create a directory where the build files will be stored**:
+    ```bash
+    mkdir build
+    ```
+
+4. **Edit the `CMakeLists.txt` file**:
    Open the `CMakeLists.txt` file and replace the following line:
    ```cmake
    set(CMAKE_TOOLCHAIN_FILE "your/path/to/vcpkg/scripts/buildsystems/vcpkg.cmake")
    ```
    with the correct path to your `vcpkg.cmake` file (usually located inside the `vcpkg/scripts/buildsystems` directory).
 
-4. **Run CMake to configure the build**:
+5. **Run CMake to configure the build**:
    ```bash
    cmake -B build
    ```
 
-5. **Build the project**:
+6. **Build the project**:
    ```bash
    cmake --build build
    ```
 
-6. **Locate the executable**:
+7. **Locate the executable**:
    You will find your executable named `myraylib.exe` in the `build/Debug/` directory.
 
-7. **Run the executable**:
+8. **Run the executable**:
    ```bash
    .\build\Debug\myraylib.exe
    ```
 
-8. **You are good to go!**
+9. **You are good to go!**
   ### **Steps Recap:**
 1. Install CMake and vcpkg.
 2. Clone the repository.
