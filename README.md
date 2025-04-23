@@ -6,8 +6,7 @@
 This project is a setup starter template for libraries associated with the VCPKG package manager. It provides an easy way to configure and build C++ projects that use RayLib and other libraries managed by VCPKG. Follow the steps below to set up the project and start developing.
 
 ## Prerequisites
-
-   This project uses CMake with vcpkg. To allow CMake to **automatically locate** the vcpkg toolchain file, you should set the `VCPKG_ROOT` environment variable to point to your vcpkg installation directory.
+   You need to have **VCPKG(as Package Manager)**, **CMake(as Build System Generator)** and **Ninja(A Build System Focussing on Speed)** installed on your System. To allow CMake to **automatically locate** the vcpkg toolchain file, you should set the `VCPKG_ROOT` environment variable to point to your vcpkg installation directory.
 
 ---
 
@@ -88,7 +87,7 @@ This project is a setup starter template for libraries associated with the VCPKG
 1. Install CMake and vcpkg.
 2. Clone the repository.
 3. Configure the `CMakeLists.txt` with the correct vcpkg path.
-4. Run `cmake -B build` to generate build files.
+4. Run `cmake -B build -G "Ninja"` to generate build files.
 5. Run `cmake --build build` to build the project.
 6. Run the executable to start.
 
