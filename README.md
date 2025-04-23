@@ -84,7 +84,7 @@ This project is a setup starter template for libraries associated with the VCPKG
 
 8. **You are good to go!**
   ### **Steps Recap:**
-1. Install CMake and vcpkg.
+1. Install CMake, VCPKG and Ninja (Ignore, If done already).
 2. Clone the repository.
 3. Configure the `CMakeLists.txt` with the correct vcpkg path.
 4. Run `cmake -B build -G "Ninja"` to generate build files.
