@@ -6,7 +6,47 @@
 This project is a setup starter template for libraries associated with the VCPKG package manager. It provides an easy way to configure and build C++ projects that use RayLib and other libraries managed by VCPKG. Follow the steps below to set up the project and start developing.
 
 ## Prerequisites
-**You need to have CMake and vcpkg installed on your system.**
+
+   This project uses CMake with vcpkg. To allow CMake to **automatically locate** the vcpkg toolchain file, you should set the `VCPKG_ROOT` environment variable to point to your vcpkg installation directory.
+
+---
+
+### ✅ Windows
+
+1. Open the **Start Menu** → search for **"Environment Variables"** → click **Edit the system environment variables**.
+2. Under **System Variables**, click **New**:
+   - **Variable name**: `VCPKG_ROOT`
+   - **Variable value**: `C:\path\to\your\vcpkg` (e.g., `C:\Users\ASUS\vcpkg`)
+3. Click **OK**, then restart your terminal or IDE for the changes to take effect.
+
+---
+
+### ✅ Linux
+
+1. Open your terminal and edit your shell configuration file (`~/.bashrc`, `~/.zshrc`, or `~/.profile`) depending on the shell you're using:
+   ```bash
+   export VCPKG_ROOT="/home/yourname/path/to/vcpkg"
+   ```
+2. Apply the changes:
+   ```bash
+   source ~/.bashrc   # or source ~/.zshrc
+   ```
+
+---
+
+### ✅ macOS
+
+1. Open Terminal
+2. Edit your shell configuration file (`~/.zshrc` or `~/.bash_profile`):
+   ```bash
+   export VCPKG_ROOT="/Users/yourname/path/to/vcpkg"
+   ```
+3. Apply the changes:
+   ```bash
+   source ~/.zshrc   # or source ~/.bash_profile
+   ```
+
+
 
 ## Setup Instructions
 
@@ -25,32 +65,25 @@ This project is a setup starter template for libraries associated with the VCPKG
     mkdir build
     ```
 
-4. **Edit the `CMakeLists.txt` file**:
-   Open the `CMakeLists.txt` file and replace the following line:
-   ```cmake
-   set(CMAKE_TOOLCHAIN_FILE "your/path/to/vcpkg/scripts/buildsystems/vcpkg.cmake")
-   ```
-   with the correct path to your `vcpkg.cmake` file (usually located inside the `vcpkg/scripts/buildsystems` directory).
-
-5. **Run CMake to configure the build**:
+4. **Run CMake to configure the build**:
    ```bash
-   cmake -B build
+   cmake -B build -G "Ninja"
    ```
 
-6. **Build the project**:
+5. **Build the project**:
    ```bash
    cmake --build build
    ```
 
-7. **Locate the executable**:
-   You will find your executable named `myraylib.exe` in the `build/Debug/` directory.
+6. **Locate the executable**:
+   You will find your executable named `myraylib.exe` in the `build/` directory.
 
-8. **Run the executable**:
+7. **Run the executable**:
    ```bash
-   .\build\Debug\myraylib.exe
+   .\build\myraylib.exe
    ```
 
-9. **You are good to go!**
+8. **You are good to go!**
   ### **Steps Recap:**
 1. Install CMake and vcpkg.
 2. Clone the repository.

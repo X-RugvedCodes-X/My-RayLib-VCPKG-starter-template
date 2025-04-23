@@ -1,8 +1,14 @@
 cmake_minimum_required(VERSION 4.0.1)
 
-set(CMAKE_TOOLCHAIN_FILE "your/path/to/vcpkg/scripts/buildsystems/vcpkg.cmake")
+if(NOT DEFINED CMAKE_TOOLCHAIN_FILE)
+    if(DEFINED ENV{VCPKG_ROOT})
+        set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
+    else()
+        message(WARNING "VCPKG_ROOT is not set. Please define the environment variable to your vcpkg path.")
+    endif()
+endif()
 
-project(myraylib VERSION 0.1.0 LANGUAGES C CXX)
+project(Pong VERSION 0.1.0 LANGUAGES C CXX)
 
 find_package(raylib CONFIG REQUIRED)
 add_executable(myraylib main.cpp)
